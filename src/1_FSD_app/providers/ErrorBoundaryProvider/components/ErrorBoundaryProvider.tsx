@@ -24,6 +24,7 @@ export class ErrorBoundaryProvider extends React.Component<
 			console.error(error)
 		}
 	}
+	//todo добавить ошибочную страницу
 
 	render(): React.ReactNode {
 		const { hasError } = this.state
@@ -32,7 +33,7 @@ export class ErrorBoundaryProvider extends React.Component<
 		if (hasError) {
 			return (
 				<Suspense>
-					<></>
+					<>Ошибка</>
 				</Suspense>
 			)
 		}

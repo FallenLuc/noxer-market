@@ -1,14 +1,19 @@
 import { MainPage } from "@pages/MainPage"
 import { memo, Suspense, useMemo } from "react"
-import { Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 
 export const RouterProvider = memo(() => {
 	const fallbackPage = useMemo(() => <></>, [])
 
+	const element = useMemo(() => <MainPage />, [])
+	// todo сделать роутинг
 	return (
 		<Suspense fallback={fallbackPage}>
 			<Routes>
-				<MainPage/>
+				<Route
+					path={"/"}
+					element={element}
+				/>
 			</Routes>
 		</Suspense>
 	)
