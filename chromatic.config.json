@@ -1,0 +1,9 @@
+{
+	"projectId": "Project:68c485fa969f9c1af0e982e9",
+	"zip": true,
+	"projectToken": "chpt_f0a4a2c61b15917",
+	"buildScriptName": "storybook:build",
+	"storybookConfigDir": "config/storybook",
+	"onlyChanged": true,
+	"debug": false
+}
