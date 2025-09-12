@@ -7,12 +7,12 @@ const config: StorybookConfig = {
 		disableTelemetry: true
 	},
 	addons: [
-		"@storybook/addon-webpack5-compiler-swc",
-		"@storybook/addon-links",
-		"@storybook/addon-essentials",
-		"@chromatic-com/storybook",
-		"storybook-addon-mock"
-	],
+        "@storybook/addon-webpack5-compiler-swc",
+        "@storybook/addon-links",
+        "@chromatic-com/storybook",
+        "storybook-addon-mock",
+        "@storybook/addon-docs"
+    ],
 	framework: {
 		name: "@storybook/react-webpack5",
 		options: {

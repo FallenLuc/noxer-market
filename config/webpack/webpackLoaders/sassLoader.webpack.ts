@@ -11,6 +11,7 @@ export const sassLoader = ({ isDev }: buildOptionsType): RuleSetRule => ({
 			loader: "css-loader",
 			options: {
 				modules: {
+					namedExport: false,
 					auto: /\.module\./,
 					localIdentName: isDev ? "[local]__[sha1:hash:hex:10]" : "[hash:base64:8]",
 					exportLocalsConvention: "camelCase"

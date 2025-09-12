@@ -1,7 +1,7 @@
 import { type DeepPartial } from "@customTypes/global.types"
 import { StoreProvider } from "@providers/StoreProvider"
 import type { mainStateMap } from "@store/storeTypes/mainState.map"
-import type { Decorator } from "@storybook/react"
+import type { Decorator } from "@storybook/react-webpack5"
 
 export const StoreDecorator = (initialState: DeepPartial<mainStateMap>): Decorator => {
 	return Story => {
