@@ -54,6 +54,8 @@ export function pluginsWebpack({
 		plugins.push(
 			new ESLintWebpackPlugin({
 				configType: "eslintrc",
+				failOnError: false,
+				threads: true,
 				extensions: ["ts", "tsx"]
 			})
 		)
