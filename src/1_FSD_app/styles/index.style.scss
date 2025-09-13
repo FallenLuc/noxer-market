@@ -1,14 +1,17 @@
 @use "reset";
 @use "vars/color.var";
 @use "vars/size.var";
-@use "fonts/Roboto.font";
+@use "vars/font.var";
+@use "fonts/Inter.font";
+@use "vars/space.var";
 @use "vars/gap.var";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
 .app {
 	position: relative;
-	min-height: 100vh;
+
+	font: var(--font-s);
 }
 
 // supports (storybook)

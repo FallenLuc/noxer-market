@@ -3,7 +3,7 @@ import { ContainerLayout } from "@ui/layout"
 import { Page } from "@ui/Page"
 import { useMemo } from "react"
 
-const MainPage = TypedMemo(() => {
+const CatalogPage = TypedMemo(() => {
 	const footer = useMemo(
 		() => (
 			<ContainerLayout>
@@ -15,10 +15,10 @@ const MainPage = TypedMemo(() => {
 	return (
 		<Page footer={footer}>
 			<ContainerLayout>
-				<h1>Привет мир</h1>
+				<h1>Привет каталог</h1>
 			</ContainerLayout>
 		</Page>
 	)
 })
 
-export default MainPage
+export default CatalogPage

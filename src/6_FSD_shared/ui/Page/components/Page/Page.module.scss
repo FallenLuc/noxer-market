@@ -1,5 +1,20 @@
 .Page {
+	height: calc(100vh - 60px - 11px);
 	padding: var(--space-xs) 0;
 
 	background-color: var(--light-gray);
+}
+
+// фиктивный верхний отступ
+.top-padding {
+	height: 60px;
+
+	background-color: #2fa7da;
+}
+
+// фиктивный нижний отступ
+.bottom-padding {
+	height: 11px;
+
+	background-color: #2fa7da;
 }

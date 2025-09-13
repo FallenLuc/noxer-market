@@ -13,12 +13,16 @@ export const Page = TypedMemo((props: PageProps) => {
 	const { className, footer, children } = props
 
 	return (
-		<VStack
-			className={classNames(styles.Page, className)}
-			justify={"spaceBetween"}
-		>
-			{children}
-			{footer}
-		</VStack>
+		<div>
+			<div className={styles.topPadding}></div>
+			<VStack
+				className={classNames(styles.Page, className)}
+				justify={"spaceBetween"}
+			>
+				{children}
+				{footer}
+			</VStack>
+			<div className={styles.bottomPadding}></div>
+		</div>
 	)
 })
