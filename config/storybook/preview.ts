@@ -2,7 +2,7 @@ import { RouterDecorator } from "@decorators/storybook/Router.decorator"
 import { StoreDecorator } from "@decorators/storybook/Store.decorator"
 import { StyleDecorator } from "@decorators/storybook/Style.decorator"
 
-import type { Preview } from "@storybook/react"
+import type { Preview } from "@storybook/react-webpack5"
 
 const preview: Preview = {
 	parameters: {

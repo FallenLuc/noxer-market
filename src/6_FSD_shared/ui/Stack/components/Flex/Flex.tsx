@@ -31,31 +31,31 @@ export type FlexProps = {
 	DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 const justifyMap: Record<justifyType, string> = {
-	spaceBetween: styles.justifySpaceBetween,
-	center: styles.justifyCenter,
-	spaceAround: styles.justifySpaceAround,
-	flexEnd: styles.justifyFlexEnd,
-	flexStart: styles.justifyFlexStart
+	spaceBetween: styles?.justifySpaceBetween,
+	center: styles?.justifyCenter,
+	spaceAround: styles?.justifySpaceAround,
+	flexEnd: styles?.justifyFlexEnd,
+	flexStart: styles?.justifyFlexStart
 }
 
 const alignMap: Record<alignType, string> = {
-	center: styles.alignCenter,
-	flexStart: styles.alignFlexStart,
-	flexEnd: styles.alignFlexEnd
+	center: styles?.alignCenter,
+	flexStart: styles?.alignFlexStart,
+	flexEnd: styles?.alignFlexEnd
 }
 
 const directionMap: Record<directionType, string> = {
-	row: styles.directionRow,
-	column: styles.directionColumn
+	row: styles?.directionRow,
+	column: styles?.directionColumn
 }
 
 const gapMap: Record<gapType, string> = {
-	XXS: styles.gapXXS,
-	XS: styles.gapXS,
-	S: styles.gapS,
-	M: styles.gapM,
-	L: styles.gapL,
-	XL: styles.gapXL
+	XXS: styles?.gapXXS,
+	XS: styles?.gapXS,
+	S: styles?.gapS,
+	M: styles?.gapM,
+	L: styles?.gapL,
+	XL: styles?.gapXL
 }
 
 export const Flex = TypedMemo((props: FlexProps) => {
@@ -72,7 +72,7 @@ export const Flex = TypedMemo((props: FlexProps) => {
 	} = props
 
 	const mods = {
-		[styles.widthMax]: widthMax
+		[styles?.widthMax]: widthMax
 	}
 
 	const classNamesArray = [

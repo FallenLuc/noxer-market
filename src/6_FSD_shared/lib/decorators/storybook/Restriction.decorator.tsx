@@ -1,4 +1,4 @@
-import type { Decorator } from "@storybook/react"
+import type { Decorator } from "@storybook/react-webpack5"
 
 export const RestrictionDecorator =
 	(typeRestrict: "default" | "large" = "default"): Decorator =>

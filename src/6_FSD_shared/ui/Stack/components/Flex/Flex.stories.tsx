@@ -1,5 +1,5 @@
 import { CenterDecorator } from "@decorators/storybook/Center.decorator"
-import { type Meta, type StoryObj } from "@storybook/react"
+import { type Meta, type StoryObj } from "@storybook/react-webpack5"
 import { Flex } from "./Flex"
 import styles from "./Flex.module.scss"
 

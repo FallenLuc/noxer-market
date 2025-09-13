@@ -4,6 +4,10 @@
 	"description": "Test Task",
 	"main": "index.ts",
 	"homepage": "https://fallenLuc.github.io/noxer-market/",
+	"sideEffects": [
+		"*.css",
+		"*.scss"
+	],
 	"scripts": {
 		"build:start:dev": "webpack serve --env port=8081 mode=development",
 		"build:dev": "webpack --env mode=development",
@@ -32,18 +36,12 @@
 		"@babel/preset-typescript": "^7.27.1",
 		"@chromatic-com/storybook": "^4.1.1",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
-		"@storybook/addon-essentials": "^8.6.14",
-		"@storybook/addon-interactions": "^8.6.14",
 		"@storybook/addon-links": "^9.1.5",
 		"@storybook/addon-onboarding": "^9.1.5",
 		"@storybook/addon-themes": "^9.1.5",
 		"@storybook/addon-webpack5-compiler-swc": "^4.0.1",
-		"@storybook/blocks": "^8.6.14",
 		"@storybook/preset-scss": "^1.0.3",
-		"@storybook/preview-api": "^8.6.14",
-		"@storybook/react": "^9.1.5",
 		"@storybook/react-webpack5": "^9.1.5",
-		"@storybook/test": "^8.6.14",
 		"@svgr/webpack": "^8.1.0",
 		"@testing-library/dom": "^10.4.1",
 		"@testing-library/react": "^16.3.0",
@@ -127,7 +125,8 @@
 		"webpack-bundle-analyzer": "^4.10.2",
 		"webpack-cli": "^6.0.1",
 		"webpack-dev-server": "^5.2.2",
-		"whatwg-fetch": "^3.6.20"
+		"whatwg-fetch": "^3.6.20",
+		"@storybook/addon-docs": "^9.1.5"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.28.4",
@@ -139,6 +138,7 @@
 		"classnames": "^2.5.1",
 		"dayjs": "^1.11.18",
 		"headless-datetimepicker": "^4.0.0",
+		"knip": "^5.63.1",
 		"normalize.css": "^8.0.1",
 		"react": "19.1.1",
 		"react-device-detect": "^2.2.3",
