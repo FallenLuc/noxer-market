@@ -1,8 +1,10 @@
+@use "../mixins/helpers.mixin" as *;
+
 :root {
-	--gap-xxs: 3px;
-	--gap-xs: 8px;
-	--gap-s: 16px;
-	--gap-m: 24px;
-	--gap-l: 32px;
-	--gap-xl: 64px;
+	--gap-xxs: #{fluid(4, 6)};
+	--gap-xs: #{fluid(8, 10)};
+	--gap-s: #{fluid(12, 14)};
+	--gap-m: #{fluid(16, 20)};
+	--gap-l: #{fluid(24, 28)};
+	--gap-xl: #{fluid(32, 40)};
 }
