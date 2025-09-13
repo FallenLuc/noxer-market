@@ -36,6 +36,7 @@
 		"@babel/preset-typescript": "^7.27.1",
 		"@chromatic-com/storybook": "^4.1.1",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
+		"@storybook/addon-docs": "^9.1.5",
 		"@storybook/addon-links": "^9.1.5",
 		"@storybook/addon-onboarding": "^9.1.5",
 		"@storybook/addon-themes": "^9.1.5",
@@ -125,8 +126,7 @@
 		"webpack-bundle-analyzer": "^4.10.2",
 		"webpack-cli": "^6.0.1",
 		"webpack-dev-server": "^5.2.2",
-		"whatwg-fetch": "^3.6.20",
-		"@storybook/addon-docs": "^9.1.5"
+		"whatwg-fetch": "^3.6.20"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.28.4",
@@ -134,6 +134,7 @@
 		"@react-spring/web": "^10.0.2",
 		"@reduxjs/toolkit": "^2.9.0",
 		"@use-gesture/react": "^10.3.1",
+		"antd": "^5.27.3",
 		"axios": "^1.12.1",
 		"classnames": "^2.5.1",
 		"dayjs": "^1.11.18",

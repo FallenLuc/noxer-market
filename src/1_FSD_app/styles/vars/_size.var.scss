@@ -1,5 +1,15 @@
+@use "../mixins/helpers.mixin" as *;
+
 :root {
 	--height-footer: 53px;
 	--height-footer-icon: 21px;
 	--height-logo-icon: 19px;
+
+	// product card
+	--width-image-compact: #{fluid(50, 52)};
+	--height-image-compact: #{fluid(50, 52)};
+	--height-tags: 22px;
+	--max-width-card: 201px;
+	--min-width-card: 169px;
+	--min-height-image: 169px;
 }

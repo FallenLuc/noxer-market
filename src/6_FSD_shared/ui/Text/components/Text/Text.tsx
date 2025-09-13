@@ -19,6 +19,7 @@ type TextPropsType = {
 	color?: appColorType
 	widthMax?: boolean
 	textTransform?: "capitalize" | "uppercase"
+	texDecoration?: "line-through"
 } & PropsWithChildren
 
 export const Text = TypedMemo((props: TextPropsType) => {
@@ -31,7 +32,8 @@ export const Text = TypedMemo((props: TextPropsType) => {
 		color = "gray",
 		TextType = "p",
 		widthMax = false,
-		textTransform = "normal"
+		textTransform = "normal",
+		texDecoration = "normal"
 	} = props
 
 	return (
@@ -39,6 +41,7 @@ export const Text = TypedMemo((props: TextPropsType) => {
 			className={classNames(
 				styles[align],
 				styles[textTransform],
+				styles[texDecoration],
 				fontSizeMapper(fontSize),
 				fontWeightMapper(fontWeight),
 				colorMapper(color),

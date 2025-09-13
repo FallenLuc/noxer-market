@@ -15,6 +15,6 @@ export const getRouteCart = () => {
 export const getRouteProfile = () => {
 	return RoutePaths.Profile
 }
-export const getRouteProduct = (id: string) => {
-	return RoutePaths.Product.replace(/:id/, id)
+export const getRouteProduct = (id: string | number) => {
+	return RoutePaths.Product.replace(/:id/, id.toString())
 }
