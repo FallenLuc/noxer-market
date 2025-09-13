@@ -1,9 +1,9 @@
 @use "../mixins/helpers.mixin" as *;
 
 :root {
-	--gap-xxs: #{fluid(4, 6)};
-	--gap-xs: #{fluid(8, 10)};
-	--gap-s: #{fluid(12, 14)};
+	--gap-xxs: #{fluid(var(--space-xxs), var(--space-xxs))};
+	--gap-xs: #{fluid(var(--space-xs), var(--space-xs))};
+	--gap-s: #{fluid(10, 10)};
 	--gap-m: #{fluid(16, 20)};
 	--gap-l: #{fluid(24, 28)};
 	--gap-xl: #{fluid(32, 40)};

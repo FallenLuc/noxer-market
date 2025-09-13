@@ -1,17 +1,6 @@
 import { CartIcon, CatalogIcon, FavoritesIcon, MainIcon, ProfileIcon } from "@assets/index"
-import type { FC, SVGProps } from "react"
 import { RoutePaths } from "../constants/routePaths.constant"
-import type { routesUnionPathType } from "../types/routeConfig.type"
-
-type baseRouteType<T extends routesUnionPathType> = {
-	path: T
-}
-
-type routeItemType<T extends routesUnionPathType> =
-	| (baseRouteType<T> & { isIcon: true; Icon: FC<SVGProps<SVGSVGElement>> })
-	| (baseRouteType<T> & { isIcon: false; Icon?: undefined })
-
-type routesConfigType = { [T in routesUnionPathType]: routeItemType<T> }
+import type { routesConfigType } from "../types/routeConfig.type"
 
 export const routesConfig = {
 	[RoutePaths.Main]: {

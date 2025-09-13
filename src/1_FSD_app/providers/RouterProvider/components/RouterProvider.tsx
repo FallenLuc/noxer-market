@@ -29,7 +29,7 @@ export const RouterProvider = memo(() => {
 	return (
 		<Suspense fallback={fallbackPage}>
 			<Routes>
-				{getRouteConfigArray(false).map((item, i) => (
+				{getRouteConfigArray().map((item, i) => (
 					<Route
 						key={i}
 						path={item.path}

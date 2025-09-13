@@ -1,1 +1,1 @@
-export { ProfilePage } from "./components/ProfilePage/PrifilePage.lazy"
+export { ProfilePage } from "./components/ProfilePage/ProfilePage.lazy"

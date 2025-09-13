@@ -1,0 +1,23 @@
+.Navigation {
+	height: var(--height-footer);
+
+	padding: 0 var(--space-xl);
+
+	border: var(--br-size-xs) solid var(--gray-opacity-10);
+
+	border-radius: var(--br-s);
+
+	background: var(--gray-opacity-30);
+	backdrop-filter: blur(--bl-s);
+}
+
+.icon {
+	width: auto;
+
+	color: var(--gray);
+	font-size: var(--height-footer-icon);
+}
+
+.icon.active {
+	color: var(--dark);
+}

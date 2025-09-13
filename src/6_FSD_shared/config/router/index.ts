@@ -11,4 +11,7 @@ export {
 	getRouteProfile
 } from "./helpers/gettersRoutesPaths.helper"
 
-export { getRouteConfigArray } from "./helpers/gettersRouteConfig.helper"
+export {
+	getRouteConfigArray,
+	getRouteWithIconConfigArray
+} from "./helpers/gettersRouteConfig.helper"

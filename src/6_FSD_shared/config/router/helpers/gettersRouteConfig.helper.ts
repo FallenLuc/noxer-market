@@ -1,11 +1,12 @@
 import { routesConfig } from "../config/route.config"
+import type { routesUnionPathType, routeWithIconType } from "../types/routeConfig.type"
 
-export const getRouteConfigArray = (withOnlyIcon = true) => {
-	const routeArray = Object.values(routesConfig)
+export const getRouteConfigArray = () => {
+	return Object.values(routesConfig)
+}
 
-	if (withOnlyIcon) {
-		return routeArray.filter(({ isIcon }) => isIcon)
-	}
-
-	return routeArray
+export const getRouteWithIconConfigArray = () => {
+	return Object.values(routesConfig).filter(
+		({ isIcon }) => isIcon
+	) as routeWithIconType<routesUnionPathType>[]
 }
