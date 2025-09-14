@@ -1,24 +1,18 @@
 import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { Skeleton as SkeletonComponent } from "antd"
+import style from "./Skeleton.module.scss"
 
 type SkeletonProps = {
-	maxWidth?: string
-	width?: string
-	height?: string
 	className?: string
 }
 
 export const Skeleton = TypedMemo((props: SkeletonProps) => {
-	const { className, height = "100%", maxWidth = "100%", width = "100%" } = props
+	const { className } = props
 
 	return (
 		<SkeletonComponent.Image
-			active={true}
-			style={{
-				maxWidth: maxWidth,
-				width: width,
-				height: height
-			}}
+			active
+			rootClassName={style.Skeleton}
 			className={className}
 		/>
 	)

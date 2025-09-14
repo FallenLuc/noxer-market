@@ -1,10 +1,11 @@
 import { TypedMemo } from "@sharedProviders/TypedMemo"
-import { HStack, VStack } from "@ui/Stack"
+import { VStack } from "@ui/Stack"
 import { Text } from "@ui/Text"
 import classNames from "classnames"
 import { useMemo } from "react"
 import type { productDataType } from "../../types/productData.type"
 import { ProductCard } from "../ProductCard/ProductCard"
+import styles from "./ProductCardItemList.module.scss"
 
 type ProductCardItemListProps = {
 	className?: string
@@ -15,7 +16,7 @@ type ProductCardItemListProps = {
 export const ProductCardItemList = TypedMemo((props: ProductCardItemListProps) => {
 	const { className, products, mode } = props
 
-	if (!products) return <Text>Ничего не найдено</Text>
+	if (!products) return <Text>Ничего не найдено</Text> //todo стилизовать
 
 	const content = useMemo(
 		() =>
@@ -31,15 +32,12 @@ export const ProductCardItemList = TypedMemo((props: ProductCardItemListProps) =
 	)
 
 	if (mode === "full") {
-		return (
-			<HStack
-				className={classNames(className)}
-				gap={"S"}
-			>
-				{content}
-			</HStack>
-		)
+		return <div className={classNames(styles.ProductCardItemList, className)}>{content}</div>
 	}
 
-	return <VStack>{content}</VStack>
+	return (
+		<VStack className={classNames(styles.ProductCardItemListCompact, className)}>
+			{content}
+		</VStack>
+	)
 })

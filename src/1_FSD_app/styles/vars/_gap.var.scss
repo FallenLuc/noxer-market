@@ -1,10 +1,10 @@
 @use "../mixins/helpers.mixin" as *;
 
 :root {
-	--gap-xxs: #{fluid(var(--space-xxs), var(--space-xxs))};
-	--gap-xs: #{fluid(5, 5)};
-	--gap-s: #{fluid(10, 10)};
-	--gap-m: #{fluid(15, 15)};
-	--gap-l: #{fluid(20, 20)};
-	--gap-xl: #{fluid(32, 40)};
+	--gap-xxs: var(--space-xxs);
+	--gap-xs: var(--space-xs);
+	--gap-s: var(--space-s);
+	--gap-m: var(--space-m);
+	--gap-l: var(--space-l);
+	--gap-xl: var(--space-xl);
 }

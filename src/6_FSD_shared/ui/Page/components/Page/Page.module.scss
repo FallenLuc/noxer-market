@@ -1,5 +1,5 @@
 .Page {
-	height: calc(100vh - 60px - 11px);
+	min-height: calc(100vh - 60px - 11px);
 	padding: var(--space-xs) 0;
 
 	background-color: var(--light-gray);

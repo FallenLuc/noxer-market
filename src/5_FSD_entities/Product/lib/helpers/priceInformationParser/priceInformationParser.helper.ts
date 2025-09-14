@@ -14,7 +14,7 @@ export function priceInformationParser(product: productDataType) {
 	}
 
 	if (oldPrice) {
-		discount = ((oldPrice - price) / oldPrice) * 100
+		discount = Math.round(((oldPrice - price) / oldPrice) * 100)
 	}
 
 	return {

@@ -4,13 +4,15 @@ import { Text } from "@ui/Text"
 import { useMemo } from "react"
 import { priceInformationParser } from "../../lib/helpers/priceInformationParser/priceInformationParser.helper"
 import type { productDataType } from "../../types/productData.type"
+import styles from "./PriceLine.module.scss"
 
 type PriceLineProps = {
+	className?: string
 	product: productDataType
 }
 
 export const PriceLine = TypedMemo((props: PriceLineProps) => {
-	const { product } = props
+	const { product, className } = props
 
 	const { discount, oldPrice, price } = useMemo(
 		() => priceInformationParser(product),
@@ -19,16 +21,20 @@ export const PriceLine = TypedMemo((props: PriceLineProps) => {
 	)
 
 	return (
-		<HStack>
+		<HStack
+			align={"flexEnd"}
+			className={className}
+			gap={"XS"}
+		>
 			<Text
+				className={styles.price}
 				TextType={"p"}
 				color={"dark"}
-				fontSize={"xl"}
 				fontWeight={"ultra-fat"}
 			>
 				{price} ₽
 			</Text>
-			{oldPrice && (
+			{Boolean(oldPrice) && (
 				<Text
 					TextType={"span"}
 					color={"gray-opacity-30"}
@@ -39,7 +45,7 @@ export const PriceLine = TypedMemo((props: PriceLineProps) => {
 					{oldPrice} ₽
 				</Text>
 			)}
-			{discount && (
+			{Boolean(discount) && (
 				<Text
 					TextType={"span"}
 					color={"red"}

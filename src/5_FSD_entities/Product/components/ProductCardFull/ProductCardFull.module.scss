@@ -1,35 +1,60 @@
 .ProductCardFull {
 	position: relative;
-	min-width: var(--min-width-card);
+
+	width: 100%;
 
 	max-width: var(--max-width-card);
+
 	padding: var(--space-xxs);
+
+	overflow: hidden;
 
 	border-radius: var(--br-s);
 
 	background-color: var(--white);
+
 	box-shadow: var(--bx-shadow);
+	container-type: inline-size;
+
+	justify-self: center;
+
+	--fs-price: clamp(13px, 9cqw, 17px);
+	--fs-title: clamp(12px, 7cqw, 14px);
 }
 
-.image-wrapper {
-	width: 100%;
-	min-height: var(--min-height-image);
+.gap-above {
+	margin-top: var(--space-xxs);
 }
 
-.image {
-	width: 100%;
-	height: 100%;
+.text {
+	display: -webkit-box;
+
+	overflow: hidden;
+
+	font-size: var(--fs-title);
+	-webkit-box-orient: vertical;
+
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
 }
 
 .tags {
 	position: absolute;
+
+	z-index: var(--z-index-medium);
 
 	top: var(--space-s);
 	left: var(--space-s);
 }
 
 .button {
-	margin-top: var(--space-xs);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: var(--min-height-button);
+
+	margin-top: var(--space-s);
 
 	border-radius: var(--br-s);
 

@@ -1,8 +1,8 @@
-:root {
-	--bp-m: 600px;
-	--bp-s: 425px;
-	--bp-xs: 360px;
+$bp-m: 600px;
+$bp-s: 425px;
+$bp-xs: 360px;
 
+:root {
 	// radius
 	--br-m: 30px;
 	--br-s: 20px;
@@ -15,4 +15,8 @@
 
 	// shadow
 	--bx-shadow: 0 0 10px 0 rgb(48 48 48 / 5%);
+
+	// z-index
+	--z-index-medium: 500;
+	--z-index-high: 1000;
 }

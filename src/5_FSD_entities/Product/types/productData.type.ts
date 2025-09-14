@@ -15,7 +15,7 @@ type productImageType = {
 	MainImage: boolean
 }
 
-type productMarkType = {
+export type productMarkType = {
 	Mark_ID: number
 	Mark_Name: string
 }

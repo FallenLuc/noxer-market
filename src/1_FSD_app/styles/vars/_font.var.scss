@@ -1,5 +1,9 @@
 @use "../mixins/helpers.mixin" as *;
 
+$bp-s: var(--bp-s);
+$bp-xs: var(--bp-xs);
+
+// todo привести в порядок
 :root {
 	// fonts
 	--font-family-main: inter, sans-serif;
@@ -25,7 +29,11 @@
 	--font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
 	// XL
-	--font-size-xl: #{fluid(16, 17)};
+	--font-size-xl: #{fluid(15, 17)};
+
+	// @media (width <= $bp-s: ) {
+	// }
+
 	--font-line-xl: 115.2%;
 	--font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
