@@ -20,6 +20,7 @@ type TextPropsType = {
 	widthMax?: boolean
 	textTransform?: "capitalize" | "uppercase"
 	texDecoration?: "line-through"
+	onClick?: () => void
 } & PropsWithChildren
 
 export const Text = TypedMemo((props: TextPropsType) => {
@@ -33,6 +34,7 @@ export const Text = TypedMemo((props: TextPropsType) => {
 		TextType = "p",
 		widthMax = false,
 		textTransform = "normal",
+		onClick,
 		texDecoration = "normal"
 	} = props
 
@@ -48,6 +50,7 @@ export const Text = TypedMemo((props: TextPropsType) => {
 				{ [styles.widthMax]: widthMax },
 				className
 			)}
+			onClick={onClick}
 		>
 			{children}
 		</TextType>

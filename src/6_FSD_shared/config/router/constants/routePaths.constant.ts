@@ -5,5 +5,6 @@ export const RoutePaths = {
 	Cart: "/cart",
 	Profile: "/profile",
 	Product: "/product/:id",
+	Search: "/search",
 	NotFound: "*"
 } as const

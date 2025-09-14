@@ -1,4 +1,12 @@
+@use "@styles/vars/global.var" as *;
+
 .Navigation {
+	position: fixed;
+
+	z-index: var(--z-index-high);
+	bottom: var(--space-m);
+
+	max-width: $bp-m;
 	height: var(--height-footer);
 
 	padding: 0 var(--space-xl);
@@ -7,8 +15,8 @@
 
 	border-radius: var(--br-m);
 
-	background: var(--gray-opacity-30);
-	backdrop-filter: blur(--bl-s);
+	background: var(--white-opacity-30);
+	backdrop-filter: blur(var(--bl-s));
 }
 
 .icon {

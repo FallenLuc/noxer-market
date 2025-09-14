@@ -18,3 +18,7 @@ export const getRouteProfile = () => {
 export const getRouteProduct = (id: string | number) => {
 	return RoutePaths.Product.replace(/:id/, id.toString())
 }
+
+export const getRouteSearch = () => {
+	return RoutePaths.Search
+}

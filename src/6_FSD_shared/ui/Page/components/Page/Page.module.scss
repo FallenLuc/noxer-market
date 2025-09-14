@@ -1,12 +1,18 @@
 .Page {
-	min-height: calc(100vh - 60px - 11px);
+	min-height: calc(100vh);
 	padding: var(--space-xs) 0;
+	padding-top: calc(60px + var(--space-s));
 
 	background-color: var(--light-gray);
 }
 
 // фиктивный верхний отступ
 .top-padding {
+	position: fixed;
+	z-index: var(--z-index-high);
+	top: 0;
+	right: 0;
+	left: 0;
 	height: 60px;
 
 	background-color: #2fa7da;
@@ -14,6 +20,12 @@
 
 // фиктивный нижний отступ
 .bottom-padding {
+	position: fixed;
+
+	z-index: var(--z-index-high);
+	right: 0;
+	bottom: 0;
+	left: 0;
 	height: 11px;
 
 	background-color: #2fa7da;

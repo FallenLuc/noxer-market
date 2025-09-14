@@ -32,6 +32,10 @@ export const routesConfig = {
 		path: RoutePaths.Product,
 		isIcon: false
 	},
+	[RoutePaths.Search]: {
+		path: RoutePaths.Search,
+		isIcon: false
+	},
 	[RoutePaths.NotFound]: {
 		path: RoutePaths.NotFound,
 		isIcon: false

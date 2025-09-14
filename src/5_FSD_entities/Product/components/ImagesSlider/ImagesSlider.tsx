@@ -46,20 +46,22 @@ export const ImagesSlider = TypedMemo((props: ImagesSliderProps) => {
 			className={styles.withMax}
 			{...settings}
 		>
-			{images.map(image => (
-				<div
-					key={image.Image_ID}
-					className={styles.imageWrapper}
-				>
-					<AppImage
-						className={styles.image}
-						fallback={fallback}
-						errorFallback={fallback}
-						src={image?.Image_URL ?? ""}
-						alt={product.Product_Name}
-					/>
-				</div>
-			))}
+			{images.length > 0 ?
+				images.map(image => (
+					<div
+						key={image.Image_ID}
+						className={styles.imageWrapper}
+					>
+						<AppImage
+							className={styles.image}
+							fallback={fallback}
+							errorFallback={fallback}
+							src={image?.Image_URL ?? ""}
+							alt={product.Product_Name}
+						/>
+					</div>
+				))
+			:	<div className={styles.imageWrapper}>{fallback}</div>}
 		</Slider>
 	)
 })

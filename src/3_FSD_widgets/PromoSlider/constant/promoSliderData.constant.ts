@@ -2,6 +2,8 @@ import { getRouteCatalog } from "@config/router"
 import { uid } from "uid"
 import type { sliderItemDataType } from "../types/sliderItemData.type"
 
+// Не нашел где это можно в api получить, поэтому сделал mock
+
 export const promoSliderData: sliderItemDataType[] = [
 	{
 		id: uid(),

@@ -7,6 +7,7 @@ import { MainPage } from "@pages/MainPage"
 import { NotFoundPage } from "@pages/NotFoundPage"
 import { ProductPage } from "@pages/ProductPage"
 import ProfilePage from "@pages/ProfilePage/components/ProfilePage/Profile.page"
+import { SearchPage } from "@pages/SearchPage"
 import type { ReactNode } from "react"
 import { memo, Suspense, useMemo } from "react"
 import { Route, Routes } from "react-router-dom"
@@ -20,6 +21,7 @@ const mapperPageNameComponent: mapperPagesType = {
 	[RoutePaths.Favourites]: <FavoritesPage />,
 	[RoutePaths.Product]: <ProductPage />,
 	[RoutePaths.Profile]: <ProfilePage />,
+	[RoutePaths.Search]: <SearchPage />,
 	[RoutePaths.NotFound]: <NotFoundPage />
 }
 

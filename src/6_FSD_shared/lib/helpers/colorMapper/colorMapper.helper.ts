@@ -14,6 +14,8 @@ export function colorMapper(color: appColorType): string {
 			return "color-dark-opacity-30"
 		case "dark":
 			return "color-dark"
+		case "white":
+			return "color-white"
 		case "gray":
 			return "color-gray"
 		case "medium-light-gray":
@@ -21,8 +23,8 @@ export function colorMapper(color: appColorType): string {
 		case "light-gray":
 			return "color-light-gray"
 		case "gray-opacity-30":
-			return "gray-opacity-30"
+			return "color-gray-opacity-30"
 		case "gray-opacity-10":
-			return "gray-opacity-10"
+			return "color-gray-opacity-10"
 	}
 }

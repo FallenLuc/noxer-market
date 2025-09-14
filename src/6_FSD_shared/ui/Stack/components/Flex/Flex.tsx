@@ -28,6 +28,7 @@ export type FlexProps = {
 	gap?: gapType
 	wrap?: "wrap" | "nowrap" | "wrapReverse"
 	widthMax?: boolean
+	onClick?: () => void
 } & PropsWithChildren &
 	DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
@@ -70,7 +71,8 @@ export const Flex = TypedMemo((props: FlexProps) => {
 		children,
 		TagType = "div",
 		wrap = "nowrap",
-		id
+		id,
+		onClick
 	} = props
 
 	const mods = {
@@ -88,6 +90,7 @@ export const Flex = TypedMemo((props: FlexProps) => {
 
 	return (
 		<TagType
+			onClick={onClick}
 			className={classNames(styles.Flex, mods, ...classNamesArray)}
 			id={id}
 		>

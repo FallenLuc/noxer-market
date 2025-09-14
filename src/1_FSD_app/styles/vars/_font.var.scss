@@ -29,7 +29,7 @@ $bp-xs: var(--bp-xs);
 	--font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
 	// XL
-	--font-size-xl: #{fluid(15, 17)};
+	--font-size-xl: 17;
 
 	// @media (width <= $bp-s: ) {
 	// }

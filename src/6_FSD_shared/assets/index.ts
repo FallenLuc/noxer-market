@@ -5,6 +5,7 @@ import FavoritesIcon from "@assets/icons/favorites.svg"
 import logoSrc from "@assets/icons/logo.svg?url"
 import MainIcon from "@assets/icons/main.svg"
 import ProfileIcon from "@assets/icons/profile.svg"
+import SearchIcon from "@assets/icons/search.svg"
 import tagHitUrl from "@assets/icons/tag_hit.svg?url"
 import tagNewUrl from "@assets/icons/tag_new.svg?url"
 import tagPremiumUrl from "@assets/icons/tag_premium.svg?url"
@@ -22,5 +23,6 @@ export {
 	tagHitUrl,
 	tagSaleUrl,
 	tagNewUrl,
-	tagPremiumUrl
+	tagPremiumUrl,
+	SearchIcon
 }

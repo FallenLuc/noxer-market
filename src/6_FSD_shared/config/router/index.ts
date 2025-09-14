@@ -8,7 +8,8 @@ export {
 	getRouteCatalog,
 	getRouteFavourites,
 	getRouteProduct,
-	getRouteProfile
+	getRouteProfile,
+	getRouteSearch
 } from "./helpers/gettersRoutesPaths.helper"
 
 export {

@@ -11,3 +11,4 @@ export type appColorType =
 	| "light-gray"
 	| "gray-opacity-30"
 	| "gray-opacity-10"
+	| "white"

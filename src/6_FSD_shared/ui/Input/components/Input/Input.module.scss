@@ -1,0 +1,64 @@
+.Input {
+	display: block;
+
+	width: 100%;
+	padding-right: calc(var(--width-input-button) + var(--space-xs) + var(--space-xs));
+	padding-left: calc(var(--height-icon-input) + var(--space-s) + var(--space-s));
+
+	border: none;
+
+	border-radius: var(--br-m);
+
+	background-color: var(--white);
+	box-shadow: var(--bx-shadow);
+
+	color: var(--dark);
+
+	font-size: clamp(15px, 4cqw, 16px);
+
+	line-height: var(--height-input);
+	container-type: inline-size;
+
+	&::placeholder {
+		color: var(--medium-light-gray);
+	}
+}
+
+.input-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.icon {
+	position: absolute;
+	top: 50%;
+	left: var(--space-s);
+	width: auto;
+
+	height: var(--height-icon-input);
+
+	transform: translateY(-50%);
+
+	color: var(--medium-light-gray);
+}
+
+.button {
+	display: flex;
+	position: absolute;
+	top: 50%;
+	right: var(--space-xs);
+	align-items: center;
+	justify-content: center;
+
+	width: var(--width-input-button);
+
+	height: var(--height-input-button);
+
+	transform: translateY(-50%);
+
+	border-radius: var(--br-s);
+
+	background-color: var(--dark);
+
+	cursor: pointer;
+}

@@ -1,12 +1,21 @@
 @use "../mixins/helpers.mixin" as *;
 
+// размеры я вынес в отдельные переменные, потому что должна быть дизайн система с понятными размерами элементов - тогда их лучше хранить в одном месте.
+
 :root {
 	--height-footer: 53px;
 	--height-footer-icon: 21px;
 	--height-logo-icon: 19px;
+	--height-input: 39px;
+	--width-input-button: 75px;
+	--height-input-button: 29px;
+	--height-icon-input: 17px;
+	--height-suggestion-item: 36px;
+	--height-list-compact: 200px;
 
 	// product card
 	--max-width-card: 201px;
+	--width-compact-card-image: 52px;
 	--min-height-button: 35px;
 
 	// category card
