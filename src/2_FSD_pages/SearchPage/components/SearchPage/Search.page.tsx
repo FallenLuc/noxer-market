@@ -14,10 +14,14 @@ const SearchPage = TypedMemo(() => {
 		),
 		[]
 	)
+
 	return (
 		<Page footer={footer}>
 			<ContainerLayout>
-				<Search autoFocus />
+				<Search
+					autoFocus
+					isSuggestions
+				/>
 			</ContainerLayout>
 		</Page>
 	)

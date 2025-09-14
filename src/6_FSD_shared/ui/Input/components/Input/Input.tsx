@@ -3,7 +3,7 @@ import { Input as InputComponent } from "@headlessui/react"
 import { TypedMemo } from "@sharedProviders/TypedMemo"
 import classNames from "classnames"
 import type { ChangeEvent } from "react"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { Text } from "../../../Text"
 import styles from "./Input.module.scss"
 
@@ -33,16 +33,18 @@ export const Input = TypedMemo((props: InputProps) => {
 	const onChangeHandler = useCallback(
 		(event: ChangeEvent<HTMLInputElement>) => {
 			const { value } = event.target
-			if (value !== "") {
-				setIsShowButton(true)
-			} else {
-				setIsShowButton(false)
-			}
-
 			onChange?.(value)
 		},
 		[onChange]
 	)
+
+	useEffect(() => {
+		if (value !== "") {
+			setIsShowButton(true)
+		} else {
+			setIsShowButton(false)
+		}
+	}, [value])
 
 	return (
 		<div className={styles.inputWrapper}>

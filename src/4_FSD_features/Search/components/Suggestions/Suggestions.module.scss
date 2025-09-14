@@ -1,0 +1,33 @@
+.Suggestions {
+	container-type: inline-size;
+
+	--fs-suggestions-title: clamp(15px, 3cqw, 17px);
+	--fs-suggestions-item: clamp(15px, 3cqw, 16px); // todo шрифты
+}
+
+.title {
+	font-size: var(--fs-suggestions-title);
+}
+
+.text-item {
+	width: 100%;
+
+	border-bottom: var(--br-size-xs) solid var(--medium-light-gray);
+
+	font-size: var(--fs-suggestions-item);
+
+	line-height: var(--height-suggestion-item);
+}
+
+.item {
+	width: 100%;
+
+	cursor: pointer;
+}
+
+.icon {
+	width: auto;
+	height: 10px;
+
+	color: var(--medium-light-gray);
+}

@@ -1,5 +1,5 @@
 import { CategorySliderList } from "@entities/Category"
-import { ProductCardItemList } from "@entities/Product/components/ProductCardItemList/ProductCardItemList"
+import { ProductCardItemList } from "@entities/Product"
 import { useGetMainDataQuery } from "@features/LoadMainData"
 import { Search } from "@features/Search"
 import { TypedMemo } from "@sharedProviders/TypedMemo"

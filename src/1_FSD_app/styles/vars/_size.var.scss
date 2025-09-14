@@ -1,5 +1,7 @@
 @use "../mixins/helpers.mixin" as *;
 
+// размеры я вынес в отдельные переменные, потому что должна быть дизайн система с понятными размерами элементов - тогда их лучше хранить в одном месте.
+
 :root {
 	--height-footer: 53px;
 	--height-footer-icon: 21px;
@@ -8,6 +10,7 @@
 	--width-input-button: 75px;
 	--height-input-button: 29px;
 	--height-icon-input: 17px;
+	--height-suggestion-item: 36px;
 
 	// product card
 	--max-width-card: 201px;
