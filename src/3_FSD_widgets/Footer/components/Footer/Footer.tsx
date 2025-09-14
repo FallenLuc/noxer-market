@@ -12,7 +12,7 @@ type FooterProps = {
 
 export const Footer = TypedMemo((props: FooterProps) => {
 	const { className } = props
-	// todo исправить Footer, navLinks должен оставаться всегда
+
 	return (
 		<VStack
 			className={classNames(styles.footer, className)}
