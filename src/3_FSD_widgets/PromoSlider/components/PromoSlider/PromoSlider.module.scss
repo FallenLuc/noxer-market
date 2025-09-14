@@ -1,0 +1,16 @@
+.image {
+	display: block;
+	width: 100%;
+
+	overflow: hidden;
+
+	border-radius: var(--br-s);
+	object-fit: cover;
+	object-position: center center;
+
+	aspect-ratio: 10/4;
+}
+
+.slider {
+	width: 100%;
+}

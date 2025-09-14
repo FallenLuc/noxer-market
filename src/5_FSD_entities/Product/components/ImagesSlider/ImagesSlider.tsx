@@ -32,7 +32,7 @@ export const ImagesSlider = TypedMemo((props: ImagesSliderProps) => {
 			slidesToShow: 1,
 			arrows: false,
 			draggable: true,
-			lazyLoad: "progressive",
+			lazyLoad: "ondemand",
 			swipeToSlide: true,
 			slidesToScroll: 1
 		}),
