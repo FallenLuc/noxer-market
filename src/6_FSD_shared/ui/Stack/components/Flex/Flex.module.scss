@@ -70,6 +70,18 @@
 	gap: var(--gap-xl);
 }
 
+.wrap {
+	flex-wrap: wrap;
+}
+
+.nowrap {
+	flex-wrap: nowrap;
+}
+
+.wrapReverse {
+	flex-wrap: wrap-reverse;
+}
+
 .story-container {
 	height: 300px;
 

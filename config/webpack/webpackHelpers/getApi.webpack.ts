@@ -6,8 +6,8 @@ export function getApi(mode: buildMode, apiUrl?: buildOptionsType["apiUrl"]) {
 	}
 
 	if (mode === "production") {
-		return "/"
+		return "https://noxer-test.ru/webapp/api"
 	}
 
-	return "/"
+	return "https://noxer-test.ru/webapp/api"
 }

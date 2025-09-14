@@ -1,0 +1,15 @@
+.ProductCardCompact {
+	padding: var(--space-s);
+
+	background-color: var(--white);
+}
+
+.image-wrapper {
+	width: var(--width-image-compact);
+	height: var(--height-image-compact);
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+}

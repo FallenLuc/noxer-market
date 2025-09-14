@@ -26,6 +26,7 @@ export type FlexProps = {
 	direction?: directionType
 	TagType?: tagType
 	gap?: gapType
+	wrap?: "wrap" | "nowrap" | "wrapReverse"
 	widthMax?: boolean
 } & PropsWithChildren &
 	DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -68,6 +69,7 @@ export const Flex = TypedMemo((props: FlexProps) => {
 		gap,
 		children,
 		TagType = "div",
+		wrap = "nowrap",
 		id
 	} = props
 
@@ -78,6 +80,7 @@ export const Flex = TypedMemo((props: FlexProps) => {
 	const classNamesArray = [
 		className,
 		justifyMap[justify],
+		styles[wrap],
 		alignMap[align],
 		directionMap[direction],
 		gap ? gapMap[gap] : undefined

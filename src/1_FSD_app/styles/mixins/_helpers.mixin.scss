@@ -4,9 +4,3 @@
 
 	@return clamp(#{$min}px, #{$intercept}px + #{$slope}vw, #{$max}px);
 }
-
-@mixin down($bp) {
-	@media (max-width: $bp) {
-		@content;
-	}
-}

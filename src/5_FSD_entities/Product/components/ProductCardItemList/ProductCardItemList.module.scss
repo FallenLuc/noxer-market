@@ -1,0 +1,31 @@
+@use "@styles/vars/global.var" as *;
+
+.ProductCardItemList {
+	display: grid;
+
+	grid-template-columns: repeat(3, 1fr);
+
+	justify-content: center;
+	gap: var(--space-xs);
+}
+
+@media (width <= $bp-s) {
+	.ProductCardItemList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width <= $bp-xs) {
+	.ProductCardItemList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.ProductCardItemListCompact {
+	margin-top: -20px;
+	padding: var(--space-s);
+	padding-top: var(--space-l);
+
+	background-color: var(--white);
+	box-shadow: var(--bx-shadow);
+}
