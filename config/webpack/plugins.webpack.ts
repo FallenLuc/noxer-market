@@ -63,7 +63,9 @@ export function pluginsWebpack({
 		plugins.push(
 			new StylelintWebpackPlugin({
 				files: ["src/**/*.scss"],
-				fix: true
+				fix: true,
+				failOnError: false,
+				threads: true
 			})
 		)
 	}

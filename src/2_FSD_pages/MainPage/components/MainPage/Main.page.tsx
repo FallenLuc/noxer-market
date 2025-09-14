@@ -4,7 +4,9 @@ import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { ContainerLayout } from "@ui/layout"
 import { Loader } from "@ui/Loader"
 import { Page } from "@ui/Page"
+import { VStack } from "@ui/Stack"
 import { Footer } from "@widgets/Footer"
+import { PromoSlider } from "@widgets/PromoSlider"
 import { useMemo } from "react"
 
 const MainPage = TypedMemo(() => {
@@ -24,10 +26,13 @@ const MainPage = TypedMemo(() => {
 				{isLoading && <Loader />}
 				{isError && <h1>Ошибка</h1>}
 
-				<ProductCardItemList
-					mode={"full"}
-					products={data?.products}
-				/>
+				<VStack gap={"S"}>
+					<PromoSlider />
+					<ProductCardItemList
+						mode={"full"}
+						products={data?.products}
+					/>
+				</VStack>
 			</ContainerLayout>
 		</Page>
 	)
