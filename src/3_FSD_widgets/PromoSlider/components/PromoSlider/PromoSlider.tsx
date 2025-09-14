@@ -25,6 +25,7 @@ export const PromoSlider = TypedMemo((props: PromoSliderProps) => {
 			arrows: false,
 			draggable: true,
 			lazyLoad: "ondemand",
+			autoplay: true,
 			swipeToSlide: true,
 			slidesToScroll: 1
 		}),
@@ -46,6 +47,7 @@ export const PromoSlider = TypedMemo((props: PromoSliderProps) => {
 					<Link
 						key={item.id}
 						to={item.link}
+						className={styles.imageWrapper}
 					>
 						<AppImage
 							className={styles.image}

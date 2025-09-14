@@ -1,3 +1,4 @@
+import { CategorySliderList } from "@entities/Category"
 import { ProductCardItemList } from "@entities/Product/components/ProductCardItemList/ProductCardItemList"
 import { useGetMainDataQuery } from "@features/LoadMainData"
 import { TypedMemo } from "@sharedProviders/TypedMemo"
@@ -28,6 +29,10 @@ const MainPage = TypedMemo(() => {
 
 				<VStack gap={"S"}>
 					<PromoSlider />
+					<CategorySliderList
+						mode={"full"}
+						categories={data?.categories}
+					/>
 					<ProductCardItemList
 						mode={"full"}
 						products={data?.products}
