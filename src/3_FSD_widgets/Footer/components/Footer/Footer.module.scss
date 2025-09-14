@@ -1,3 +1,7 @@
 .icon {
 	height: var(--height-logo-icon);
 }
+
+.footer {
+	padding-bottom: calc(var(--height-footer) + var(--space-m));
+}

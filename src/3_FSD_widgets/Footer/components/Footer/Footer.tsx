@@ -15,7 +15,7 @@ export const Footer = TypedMemo((props: FooterProps) => {
 	// todo исправить Footer, navLinks должен оставаться всегда
 	return (
 		<VStack
-			className={classNames(className)}
+			className={classNames(styles.footer, className)}
 			TagType={"footer"}
 			gap={"S"}
 			align={"center"}
