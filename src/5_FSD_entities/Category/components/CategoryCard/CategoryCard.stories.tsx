@@ -1,11 +1,11 @@
 import preview from "@_storybook/preview"
 import { CenterDecorator } from "@decorators/storybook/Center.decorator"
 import { type Meta, type StoryObj } from "@storybook/react-webpack5"
-import { Category } from "./Category"
+import { CategoryCard } from "./CategoryCard"
 
-const meta: Meta<typeof Category> = {
-	title: "entities/Category",
-	component: Category,
+const meta: Meta<typeof CategoryCard> = {
+	title: "entities/CategoryCard",
+	component: CategoryCard,
 	args: {},
 	parameters: {
 		controls: {
@@ -17,6 +17,6 @@ const meta: Meta<typeof Category> = {
 
 export default meta
 
-type TypeStory = StoryObj<typeof Category>
+type TypeStory = StoryObj<typeof CategoryCard>
 
 export const Default: TypeStory = {}
