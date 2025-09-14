@@ -10,6 +10,7 @@ export type productsStateMapBase = {
 	filteredProducts: productDataType[]
 	countRequest: number
 	triggerLoad: boolean
+	_init: boolean
 }
 
 export type productsStateMap = productsStateMapBase & EntityState<productDataType, number>

@@ -15,10 +15,21 @@ export const [, getProductsPerPageSelector] = buildCreateSelector(
 	(state: productsStateMap) => state.perPage
 )
 
+export const [useGetProductsIsLoadingSelector] = buildCreateSelector(
+	[getProductsSelector],
+	(state: productsStateMap) => state.isLoading
+)
+
 export const [, getProductsHasNextSelector] = buildCreateSelector(
 	[getProductsSelector],
 	(state: productsStateMap) => state.hasNext
 )
+
+export const [useGetProductsInitSelector] = buildCreateSelector(
+	[getProductsSelector],
+	(state: productsStateMap) => state._init
+)
+
 export const [, getProductsCountRequestSelector] = buildCreateSelector(
 	[getProductsSelector],
 	(state: productsStateMap) => state.countRequest

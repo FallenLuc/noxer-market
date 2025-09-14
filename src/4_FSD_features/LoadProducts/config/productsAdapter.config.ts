@@ -14,5 +14,6 @@ export const initialStateAdapter = productsAdapter.getInitialState<productsState
 	countRequest: 0,
 	triggerLoad: true,
 	filteredProducts: [],
-	page: 1
+	page: 1,
+	_init: false
 })

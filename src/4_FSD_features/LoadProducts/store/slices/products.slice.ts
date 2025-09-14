@@ -41,7 +41,6 @@ const productsSlice = buildSlice({
 				productsAdapter.addMany(state, products)
 
 				const hasNext = action.payload.pagination.has_next
-				const perPage = action.payload.pagination.per_page
 
 				const page = action.payload.pagination.current_page + 1
 
@@ -53,7 +52,8 @@ const productsSlice = buildSlice({
 					state.page = page
 				}
 
-				if (perPage === 20) {
+				if (!state._init) {
+					state._init = true
 					state.perPage = 50
 				}
 			})
