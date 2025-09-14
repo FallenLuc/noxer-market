@@ -23,10 +23,29 @@
 }
 
 .ProductCardItemListCompact {
+	position: relative;
 	margin-top: -20px;
 	padding: var(--space-s);
 	padding-top: var(--space-l);
 
+	border-radius: var(--br-s);
+
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+
 	background-color: var(--white);
 	box-shadow: var(--bx-shadow);
+}
+
+.minHeight {
+	min-height: var(--height-list-compact);
+}
+
+.loader {
+	background: none;
+}
+
+.error {
+	position: absolute;
+	inset: 0;
 }

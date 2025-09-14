@@ -24,22 +24,29 @@ export const ProductCardCompact = TypedMemo((props: ProductCardCompactProps) => 
 	const fallback = useMemo(() => <Skeleton />, [])
 
 	return (
-		<Link to={getRouteProduct(product.Product_ID)}>
+		<Link
+			to={getRouteProduct(product.Product_ID)}
+			className={styles.link}
+		>
 			<HStack
 				gap={"L"}
 				className={classNames(styles.ProductCardCompact, className)}
 			>
 				<div className={styles.imageWrapper}>
-					<AppImage
-						className={styles.image}
-						fallback={fallback}
-						src={image?.Image_URL || ""}
-						alt={product.Product_Name}
-					/>
+					{image?.Image_URL ?
+						<AppImage
+							className={styles.image}
+							fallback={fallback}
+							errorFallback={fallback}
+							src={image?.Image_URL}
+							alt={product.Product_Name}
+						/>
+					:	fallback}
 				</div>
 
 				<VStack gap={"M"}>
 					<Text
+						className={styles.title}
 						TextType={"p"}
 						color={"dark"}
 						fontSize={"l"}

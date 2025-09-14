@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import type { thunkConfigType } from "@store/storeTypes/thunks.type"
-import { getProductsHasNextSelector } from "../../selectors/getProductsFields.selector"
+import { getProductsCountRequestSelector, getProductsHasNextSelector } from "../../selectors/getProductsFields.selector"
 import { fetchProductsThunk } from "../fetchProducts/fetchProducts.thunk"
 
 export const fetchShadowProductsThunk = createAsyncThunk<
@@ -11,14 +11,17 @@ export const fetchShadowProductsThunk = createAsyncThunk<
 	const { dispatch, getState } = thunkAPI
 
 	const selectHasNext = getProductsHasNextSelector()
+	const selectCountRequest = getProductsCountRequestSelector()
 
 	let hasNext = selectHasNext(getState())
+	let countRequest = selectCountRequest(getState())
 
-	while (hasNext === true) {
+	while (hasNext === true && countRequest < 10) {
 		try {
 			await dispatch(fetchProductsThunk())
 			await new Promise(resolve => setTimeout(resolve, 500))
 			hasNext = selectHasNext(getState())
+			countRequest = selectCountRequest(getState())
 		} catch {
 			hasNext = false
 		}

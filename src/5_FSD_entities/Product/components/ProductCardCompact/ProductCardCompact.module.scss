@@ -1,15 +1,39 @@
 .ProductCardCompact {
+	position: relative;
+	width: 100%;
 	padding: var(--space-s);
 
 	background-color: var(--white);
+
+	container-type: inline-size;
+
+	--fs-title-compact-card: clamp(13px, 2.5cqw, 15px); // todo шрифты
+	--fs-price: clamp(16px, 4cqw, 17px);
+}
+
+.link {
+	display: block;
+	width: 100%;
 }
 
 .image-wrapper {
-	width: var(--width-image-compact);
-	height: var(--height-image-compact);
+	position: relative;
+	width: 100%;
+	max-width: var(--width-compact-card-image);
+	aspect-ratio: 1 / 1;
+
+	overflow: hidden;
+
+	border-radius: var(--br-xs);
 }
 
 .image {
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+.title {
+	font-size: var(--fs-title-compact-card);
 }

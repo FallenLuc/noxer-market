@@ -19,9 +19,20 @@ export const [, getProductsHasNextSelector] = buildCreateSelector(
 	[getProductsSelector],
 	(state: productsStateMap) => state.hasNext
 )
+export const [, getProductsCountRequestSelector] = buildCreateSelector(
+	[getProductsSelector],
+	(state: productsStateMap) => state.countRequest
+)
+export const [useGetProductsTriggerLoadSelector] = buildCreateSelector(
+	[getProductsSelector],
+	(state: productsStateMap) => state.triggerLoad
+)
 
 export const { selectAll: getProductsDataSelector } = productsAdapter.getSelectors<mainStateMap>(
 	state => state.products || initialStateAdapter
 )
+
+export const [useGetProductsFilteredDataSelector, getProductsFilteredDataSelector] =
+	buildCreateSelector([getProductsSelector], (state: productsStateMap) => state.filteredProducts)
 
 export const [useGetProductsDataSelector] = buildSelector(getProductsDataSelector)

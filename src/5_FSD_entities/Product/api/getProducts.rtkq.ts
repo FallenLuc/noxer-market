@@ -26,8 +26,7 @@ const getProductsRtkq = rtkBaseApi.injectEndpoints({
 						on_main: false
 					}
 				}
-			},
-			keepUnusedDataFor: 1
+			}
 		})
 	})
 })

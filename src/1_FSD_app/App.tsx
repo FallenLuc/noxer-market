@@ -1,14 +1,17 @@
-import { fetchShadowProductsThunk } from "@features/LoadProducts/store/thunks/fetchShadowProducts/fetchShadowProducts.thunk"
+import { fetchShadowProductsThunk, useGetProductsTriggerLoadSelector } from "@features/LoadProducts"
 import { useAppDispatch } from "@hooks/useAppDispatch.hook"
-import { useInitialEffect } from "@hooks/useInitialEffect.hook"
 import { ErrorBoundaryProvider } from "@providers/ErrorBoundaryProvider"
 import { RouterProvider } from "@providers/RouterProvider"
-import { memo, useCallback } from "react"
+import { memo, useEffect } from "react"
 
 const App = memo(() => {
 	const dispatch = useAppDispatch()
 
-	useInitialEffect(useCallback(() => dispatch(fetchShadowProductsThunk()), [dispatch]))
+	const trigger = useGetProductsTriggerLoadSelector()
+
+	useEffect(() => {
+		dispatch(fetchShadowProductsThunk())
+	}, [dispatch, trigger])
 
 	return (
 		<div className={"app"}>
