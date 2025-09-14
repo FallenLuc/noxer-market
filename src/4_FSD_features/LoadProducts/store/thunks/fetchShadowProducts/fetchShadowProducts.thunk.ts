@@ -1,6 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import type { thunkConfigType } from "@store/storeTypes/thunks.type"
-import { getProductsCountRequestSelector, getProductsHasNextSelector } from "../../selectors/getProductsFields.selector"
+import {
+	getProductsCountRequestSelector,
+	getProductsHasNextSelector
+} from "../../selectors/getProductsFields.selector"
 import { fetchProductsThunk } from "../fetchProducts/fetchProducts.thunk"
 
 export const fetchShadowProductsThunk = createAsyncThunk<
