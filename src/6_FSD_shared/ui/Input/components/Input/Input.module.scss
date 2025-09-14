@@ -5,6 +5,8 @@
 	padding-right: calc(var(--width-input-button) + var(--space-xs) + var(--space-xs));
 	padding-left: calc(var(--height-icon-input) + var(--space-s) + var(--space-s));
 
+	border: none;
+
 	border-radius: var(--br-m);
 
 	background-color: var(--white);
@@ -31,12 +33,13 @@
 	position: absolute;
 	top: 50%;
 	left: var(--space-s);
+	width: auto;
+
+	height: var(--height-icon-input);
 
 	transform: translateY(-50%);
 
 	color: var(--medium-light-gray);
-
-	font-size: var(--font-xl);
 }
 
 .button {
@@ -49,7 +52,13 @@
 
 	width: var(--width-input-button);
 
+	height: var(--height-input-button);
+
 	transform: translateY(-50%);
 
+	border-radius: var(--br-s);
+
 	background-color: var(--dark);
+
+	cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import { CategorySliderList } from "@entities/Category"
 import { ProductCardItemList } from "@entities/Product/components/ProductCardItemList/ProductCardItemList"
 import { useGetMainDataQuery } from "@features/LoadMainData"
+import { Search } from "@features/Search"
 import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { ContainerLayout } from "@ui/layout"
 import { Loader } from "@ui/Loader"
@@ -21,13 +22,14 @@ const MainPage = TypedMemo(() => {
 	)
 	const { data, isLoading, isError } = useGetMainDataQuery()
 
+	//todo доработать обработку ошибки
 	return (
 		<Page footer={footer}>
 			<ContainerLayout>
 				{isLoading && <Loader />}
 				{isError && <h1>Ошибка</h1>}
-
 				<VStack gap={"S"}>
+					<Search />
 					<PromoSlider />
 					<CategorySliderList
 						mode={"full"}

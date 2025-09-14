@@ -12,11 +12,21 @@ type InputProps = {
 	placeholder?: string
 	onClick?: () => void
 	onChange?: (value: string) => void
+	onFocus?: () => void
+	autoFocus?: boolean
 	value?: string
 }
 
 export const Input = TypedMemo((props: InputProps) => {
-	const { className, value = "", onClick, onChange, placeholder } = props
+	const {
+		className,
+		value = "",
+		onClick,
+		onChange,
+		placeholder,
+		onFocus,
+		autoFocus = false
+	} = props
 
 	const [isShowButton, setIsShowButton] = useState(Boolean(value))
 
@@ -35,16 +45,21 @@ export const Input = TypedMemo((props: InputProps) => {
 	)
 
 	return (
-		<div className={styles.Input}>
+		<div className={styles.inputWrapper}>
 			<SearchIcon className={styles.icon} />
 			<InputComponent
+				autoFocus={autoFocus}
+				onFocus={onFocus}
 				placeholder={placeholder}
 				className={classNames(styles.Input, className)}
 				value={value}
 				onChange={onChangeHandler}
 			/>
 			{isShowButton && (
-				<button onClick={onClick}>
+				<button
+					onClick={onClick}
+					className={styles.button}
+				>
 					<Text
 						color={"white"}
 						fontSize={"xs"}

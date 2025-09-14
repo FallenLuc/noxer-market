@@ -55,7 +55,6 @@ export function pluginsWebpack({
 			new ESLintWebpackPlugin({
 				configType: "eslintrc",
 				failOnError: false,
-				threads: true,
 				extensions: ["ts", "tsx"]
 			})
 		)
@@ -64,8 +63,7 @@ export function pluginsWebpack({
 			new StylelintWebpackPlugin({
 				files: ["src/**/*.scss"],
 				fix: true,
-				failOnError: false,
-				threads: true
+				failOnError: false
 			})
 		)
 	}
