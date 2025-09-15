@@ -1,5 +1,5 @@
 import type { ImgHTMLAttributes, ReactNode } from "react"
-import { memo, useLayoutEffect, useState } from "react"
+import { memo, useCallback, useEffect, useState } from "react"
 
 type AppImageProps = {
 	src: string
@@ -24,32 +24,36 @@ export const AppImage = memo<AppImageProps>(props => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [isError, setIsError] = useState(false)
 
-	useLayoutEffect(() => {
-		const img = new Image()
-		img.src = src
-		img.onload = () => {
-			setIsLoading(false)
-		}
-		img.onerror = () => {
-			setIsLoading(false)
-			setIsError(true)
-		}
+	useEffect(() => {
+		setIsLoading(true)
+		setIsError(false)
 	}, [src])
 
-	if ((isLoading || testIsLoading) && fallback) {
-		return fallback
-	}
+	const onLoadHandler = useCallback(() => {
+		setIsLoading(false)
+	}, [])
 
-	if (isError && errorFallback) {
-		return errorFallback
-	}
+	const onErrorHandler = useCallback(() => {
+		setIsLoading(false)
+		setIsError(true)
+	}, [])
+
+	const showError = isError && !!errorFallback
+	const showFallback = !showError && (isLoading || testIsLoading) && !!fallback
 
 	return (
-		<img
-			className={className}
-			src={src}
-			alt={alt}
-			{...otherProps}
-		/>
+		<>
+			{showFallback ? fallback : null}
+			{showError ? errorFallback : null}
+			<img
+				className={className}
+				src={src}
+				alt={alt}
+				onLoad={onLoadHandler}
+				onError={onErrorHandler}
+				style={{ visibility: showFallback || showError ? "hidden" : undefined }}
+				{...otherProps}
+			/>
+		</>
 	)
 })

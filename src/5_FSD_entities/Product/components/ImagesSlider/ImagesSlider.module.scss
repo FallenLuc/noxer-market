@@ -1,0 +1,37 @@
+.image-wrapper {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+
+	min-height: 169px;
+
+	overflow: hidden;
+
+	border-radius: var(--br-s);
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+.with-max {
+	width: 100%;
+}
+
+:global {
+	.slick-dots {
+		display: flex !important;
+		bottom: 0;
+		align-items: center;
+		justify-content: center;
+
+		li {
+			width: 5px;
+			margin: 0 2px;
+		}
+	}
+}

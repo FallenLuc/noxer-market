@@ -1,11 +1,23 @@
-:root {
-	// Button
-	--width-button-s: 222px;
-	--width-button-m: 323px;
-	--height-button-s: 39px;
-	--height-button-m: 60px;
+@use "../mixins/helpers.mixin" as *;
 
-	// Input
-	--height-input-s: 50px;
-	--height-input-m: 60px;
+// размеры я вынес в отдельные переменные, потому что должна быть дизайн система с понятными размерами элементов - тогда их лучше хранить в одном месте.
+
+:root {
+	--height-footer: 53px;
+	--height-footer-icon: 21px;
+	--height-logo-icon: 19px;
+	--height-input: 39px;
+	--width-input-button: 75px;
+	--height-input-button: 29px;
+	--height-icon-input: 17px;
+	--height-suggestion-item: 36px;
+	--height-list-compact: 200px;
+
+	// product card
+	--max-width-card: 230px;
+	--width-compact-card-image: 52px;
+	--min-height-button: 35px;
+
+	// category card
+	--width-category-card: 114px;
 }

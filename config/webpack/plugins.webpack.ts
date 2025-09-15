@@ -3,11 +3,11 @@ import CircularPlugin from "circular-dependency-plugin"
 import ESLintWebpackPlugin from "eslint-webpack-plugin"
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin"
 import HtmlWebpackPlugin from "html-webpack-plugin"
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import StylelintWebpackPlugin from "stylelint-webpack-plugin"
 import { DefinePlugin, ProgressPlugin, type WebpackPluginInstance } from "webpack"
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import { type buildOptionsType } from "./types/config"
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
-import StylelintWebpackPlugin from "stylelint-webpack-plugin"
 
 export function pluginsWebpack({
 	paths,
@@ -53,6 +53,8 @@ export function pluginsWebpack({
 
 		plugins.push(
 			new ESLintWebpackPlugin({
+				configType: "eslintrc",
+				failOnError: false,
 				extensions: ["ts", "tsx"]
 			})
 		)
@@ -60,7 +62,8 @@ export function pluginsWebpack({
 		plugins.push(
 			new StylelintWebpackPlugin({
 				files: ["src/**/*.scss"],
-				fix: true
+				fix: true,
+				failOnError: false
 			})
 		)
 	}

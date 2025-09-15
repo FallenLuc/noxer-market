@@ -5,7 +5,8 @@
 		"skipLibCheck": true,
 		"noImplicitAny": true,
 		"module": "ESNext",
-		"target": "es5",
+		"target": "ES2022",
+		"lib": ["ES2023", "DOM"],
 		"jsx": "react-jsx",
 		"strict": true,
 		"allowJs": true,
@@ -13,7 +14,7 @@
 		"allowSyntheticDefaultImports": true,
 		"isolatedModules": true,
 		"esModuleInterop": true,
-		"types": ["node", "@jest/globals", "@types/jest", "@testing-library/jest-dom"],
+		"types": ["node"],
 		"resolveJsonModule": true,
 		"plugins": [
 			{
