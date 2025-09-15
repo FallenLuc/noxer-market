@@ -27,9 +27,8 @@ export const svgrLoaders = (): RuleSetRule[] => {
 
 	const svgrLoaderIcon = {
 		test: /\.svg$/i,
-		type: "asset",
-		resourceQuery: /url/,
-		use: ["@svgr/webpack"]
+		type: "asset/resource",
+		resourceQuery: /url/
 	}
 
 	return [svgrLoaderComponent, svgrLoaderIcon]

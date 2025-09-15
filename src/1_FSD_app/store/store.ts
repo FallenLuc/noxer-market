@@ -1,4 +1,6 @@
-import { rtkBaseApi } from "@api/instances/rtkBase.api"
+import { rtkBaseApi } from "@api/index"
+import { productsReducer } from "@features/LoadProducts"
+import { searchReducer } from "@features/Search"
 
 import type { ReducersMapObject } from "@reduxjs/toolkit"
 import { configureStore } from "@reduxjs/toolkit"
@@ -6,6 +8,8 @@ import { type mainStateMap } from "./storeTypes/mainState.map"
 
 export function createReduxStore(initialState?: mainStateMap) {
 	const rootReducer: ReducersMapObject<mainStateMap> = {
+		search: searchReducer,
+		products: productsReducer,
 		[rtkBaseApi.reducerPath]: rtkBaseApi.reducer
 	}
 

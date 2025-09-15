@@ -1,0 +1,52 @@
+import { ProductCardItemList } from "@entities/Product"
+import {
+	useGetProductsDataSelector,
+	useGetProductsInitSelector,
+	useGetProductsIsLoadingSelector
+} from "@features/LoadProducts"
+import { TypedMemo } from "@sharedProviders/TypedMemo"
+import { ContainerLayout } from "@ui/layout"
+import { Page } from "@ui/Page"
+import { VStack } from "@ui/Stack"
+import { Text } from "@ui/Text"
+import { Footer } from "@widgets/Footer"
+import { useMemo } from "react"
+
+const CatalogPage = TypedMemo(() => {
+	const footer = useMemo(
+		() => (
+			<ContainerLayout>
+				<Footer />
+			</ContainerLayout>
+		),
+		[]
+	)
+
+	const products = useGetProductsDataSelector()
+	const isLoading = useGetProductsIsLoadingSelector()
+	const _init = useGetProductsInitSelector()
+
+	return (
+		<Page footer={footer}>
+			<ContainerLayout>
+				<VStack gap={"M"}>
+					<Text
+						color={"dark"}
+						fontWeight={"fat"}
+						TextType={"h1"}
+						fontSize={"xl"}
+					>
+						Привет Каталог
+					</Text>
+					<ProductCardItemList
+						mode={"full"}
+						isLoading={isLoading && !_init}
+						products={products}
+					/>
+				</VStack>
+			</ContainerLayout>
+		</Page>
+	)
+})
+
+export default CatalogPage

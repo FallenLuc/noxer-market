@@ -1,0 +1,11 @@
+.Skeleton {
+	position: absolute;
+	inset: 0;
+}
+
+:global {
+	.ant-skeleton-image {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}

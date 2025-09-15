@@ -1,6 +1,6 @@
 export type buildMode = "production" | "development"
 
-export type buildPathsType = {
+type buildPathsType = {
 	entry: string
 	build: string
 	html: string

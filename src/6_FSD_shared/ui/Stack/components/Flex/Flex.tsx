@@ -26,36 +26,38 @@ export type FlexProps = {
 	direction?: directionType
 	TagType?: tagType
 	gap?: gapType
+	wrap?: "wrap" | "nowrap" | "wrapReverse"
 	widthMax?: boolean
+	onClick?: () => void
 } & PropsWithChildren &
 	DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 const justifyMap: Record<justifyType, string> = {
-	spaceBetween: styles.justifySpaceBetween,
-	center: styles.justifyCenter,
-	spaceAround: styles.justifySpaceAround,
-	flexEnd: styles.justifyFlexEnd,
-	flexStart: styles.justifyFlexStart
+	spaceBetween: styles?.justifySpaceBetween,
+	center: styles?.justifyCenter,
+	spaceAround: styles?.justifySpaceAround,
+	flexEnd: styles?.justifyFlexEnd,
+	flexStart: styles?.justifyFlexStart
 }
 
 const alignMap: Record<alignType, string> = {
-	center: styles.alignCenter,
-	flexStart: styles.alignFlexStart,
-	flexEnd: styles.alignFlexEnd
+	center: styles?.alignCenter,
+	flexStart: styles?.alignFlexStart,
+	flexEnd: styles?.alignFlexEnd
 }
 
 const directionMap: Record<directionType, string> = {
-	row: styles.directionRow,
-	column: styles.directionColumn
+	row: styles?.directionRow,
+	column: styles?.directionColumn
 }
 
 const gapMap: Record<gapType, string> = {
-	XXS: styles.gapXXS,
-	XS: styles.gapXS,
-	S: styles.gapS,
-	M: styles.gapM,
-	L: styles.gapL,
-	XL: styles.gapXL
+	XXS: styles?.gapXXS,
+	XS: styles?.gapXS,
+	S: styles?.gapS,
+	M: styles?.gapM,
+	L: styles?.gapL,
+	XL: styles?.gapXL
 }
 
 export const Flex = TypedMemo((props: FlexProps) => {
@@ -68,16 +70,19 @@ export const Flex = TypedMemo((props: FlexProps) => {
 		gap,
 		children,
 		TagType = "div",
-		id
+		wrap = "nowrap",
+		id,
+		onClick
 	} = props
 
 	const mods = {
-		[styles.widthMax]: widthMax
+		[styles?.widthMax]: widthMax
 	}
 
 	const classNamesArray = [
 		className,
 		justifyMap[justify],
+		styles[wrap],
 		alignMap[align],
 		directionMap[direction],
 		gap ? gapMap[gap] : undefined
@@ -85,6 +90,7 @@ export const Flex = TypedMemo((props: FlexProps) => {
 
 	return (
 		<TagType
+			onClick={onClick}
 			className={classNames(styles.Flex, mods, ...classNamesArray)}
 			id={id}
 		>

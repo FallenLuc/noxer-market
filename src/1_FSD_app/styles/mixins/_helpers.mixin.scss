@@ -1,0 +1,6 @@
+@function fluid($min, $max, $min-vw: 360, $max-vw: 600) {
+	$slope: calc((($max - $min) / ($max-vw - $min-vw)) * 100);
+	$intercept: calc($min - ($slope * $min-vw / 100));
+
+	@return clamp(#{$min}px, #{$intercept}px + #{$slope}vw, #{$max}px);
+}

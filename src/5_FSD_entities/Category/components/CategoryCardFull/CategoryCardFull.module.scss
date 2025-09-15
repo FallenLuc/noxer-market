@@ -1,0 +1,39 @@
+.CategoryCardFull {
+	max-width: var(--width-category-card);
+
+	container-type: inline-size;
+
+	padding: 0 var(--space-xxs);
+
+	--fs-category-title: clamp(var(--font-size-xxs), 14cqw, var(--font-size-s));
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+.image-wrapper {
+	position: relative;
+	aspect-ratio: 1/1;
+
+	width: 100%;
+
+	overflow: hidden;
+
+	border-radius: var(--br-s);
+}
+
+.text {
+	display: -webkit-box;
+
+	overflow: hidden;
+
+	font-size: var(--fs-category-title);
+	-webkit-box-orient: vertical;
+
+	-webkit-line-clamp: 1;
+	line-clamp: 1;
+}
