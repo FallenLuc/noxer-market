@@ -8,6 +8,8 @@ import type { fontSizeType, fontWeightType } from "@customTypes/style.type"
 
 export function fontSizeMapper(size: fontSizeType): string {
 	switch (size) {
+		case "xxs":
+			return "font-xxs"
 		case "xs":
 			return "font-xs"
 		case "s":
@@ -18,6 +20,8 @@ export function fontSizeMapper(size: fontSizeType): string {
 			return "font-l"
 		case "xl":
 			return "font-xl"
+		case "xxl":
+			return "font-xxl"
 	}
 }
 

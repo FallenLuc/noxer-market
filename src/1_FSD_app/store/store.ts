@@ -1,4 +1,4 @@
-import { rtkBaseApi } from "@api/instances/rtkBase.api"
+import { rtkBaseApi } from "@api/index"
 import { productsReducer } from "@features/LoadProducts"
 import { searchReducer } from "@features/Search"
 

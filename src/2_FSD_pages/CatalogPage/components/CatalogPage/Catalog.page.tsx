@@ -3,7 +3,7 @@ import {
 	useGetProductsDataSelector,
 	useGetProductsInitSelector,
 	useGetProductsIsLoadingSelector
-} from "@features/LoadProducts/store/selectors/getProductsFields.selector"
+} from "@features/LoadProducts"
 import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { ContainerLayout } from "@ui/layout"
 import { Page } from "@ui/Page"

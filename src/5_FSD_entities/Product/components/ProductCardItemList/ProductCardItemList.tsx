@@ -94,7 +94,7 @@ export const ProductCardItemList = TypedMemo((props: ProductCardItemListProps) =
 			{products.map((product, i) => {
 				stack.push(product)
 
-				if ((i + 1) % countGrid === 0 || products.length - i < countGrid) {
+				if ((i + 1) % countGrid === 0 || products.length - i + 1 < countGrid) {
 					const mirrorStack = stack
 					stack = []
 					return (

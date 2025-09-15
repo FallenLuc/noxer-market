@@ -1,4 +1,8 @@
 // font-size
+.font-xxs {
+	font: var(--font-xxs);
+}
+
 .font-xs {
 	font: var(--font-xs);
 }
@@ -17,6 +21,10 @@
 
 .font-xl {
 	font: var(--font-xl);
+}
+
+.font-xxl {
+	font: var(--font-xxl);
 }
 
 // font-weight

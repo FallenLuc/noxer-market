@@ -1,8 +1,8 @@
 .Suggestions {
 	container-type: inline-size;
 
-	--fs-suggestions-title: clamp(15px, 3cqw, 17px);
-	--fs-suggestions-item: clamp(15px, 3cqw, 16px); // todo шрифты
+	--fs-suggestions-title: clamp(var(--font-size-l), 3cqw, var(--font-size-xxl));
+	--fs-suggestions-item: clamp(var(--font-size-l), 3cqw, var(--font-size-xl));
 }
 
 .title {

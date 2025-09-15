@@ -1,5 +1,5 @@
+import { getRequestPathsProducts } from "@api/index"
 import { rtkBaseApi } from "@api/instances/rtkBase.api"
-import { getRequestPathsProducts } from "@api/lib/helpers/getterRequestPaths.helper"
 import type { paginationType } from "@customTypes/pagination.type"
 import type { productDataType } from "@entities/Product"
 
@@ -9,7 +9,7 @@ export type productsResponseType = {
 	status: string
 }
 
-export type getProductsParamsType = {
+type getProductsParamsType = {
 	perPage: number
 	page: number
 }
@@ -31,5 +31,4 @@ const getProductsRtkq = rtkBaseApi.injectEndpoints({
 	})
 })
 
-export const { useGetProductsQuery } = getProductsRtkq
 export const getProducts = getProductsRtkq.endpoints.getProducts.initiate

@@ -6,10 +6,12 @@ import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { ContainerLayout } from "@ui/layout"
 import { Loader } from "@ui/Loader"
 import { Page } from "@ui/Page"
-import { VStack } from "@ui/Stack"
+import { HStack, VStack } from "@ui/Stack"
+import { Text } from "@ui/Text"
 import { Footer } from "@widgets/Footer"
 import { PromoSlider } from "@widgets/PromoSlider"
 import { useMemo } from "react"
+import styles from "./MainPage.module.scss"
 
 const MainPage = TypedMemo(() => {
 	const footer = useMemo(
@@ -22,12 +24,27 @@ const MainPage = TypedMemo(() => {
 	)
 	const { data, isLoading, isError } = useGetMainDataQuery()
 
-	//todo доработать обработку ошибки
+	const Error = (
+		<HStack
+			justify={"center"}
+			align={"center"}
+			className={styles.error}
+		>
+			<Text
+				color={"red"}
+				fontWeight={"ultra-fat"}
+				TextType={"h2"}
+				fontSize={"xl"}
+			>
+				Ничего не получилось найти
+			</Text>
+		</HStack>
+	)
 	return (
 		<Page footer={footer}>
 			<ContainerLayout>
 				{isLoading && <Loader />}
-				{isError && <h1>Ошибка</h1>}
+				{isError && Error}
 				<VStack gap={"S"}>
 					<Search />
 					<PromoSlider />

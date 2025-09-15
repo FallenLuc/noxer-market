@@ -18,8 +18,8 @@
 
 	justify-self: center;
 
-	--fs-price: clamp(13px, 9cqw, 17px); // todo шрифты
-	--fs-title: clamp(12px, 7cqw, 14px);
+	--fs-price: clamp(var(--font-size-s), 9cqw, var(--font-size-xxl));
+	--fs-title: clamp(var(--font-size-xs), 7cqw, var(--font-size-m));
 }
 
 .gap-above {
