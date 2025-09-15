@@ -54,7 +54,7 @@
 		"css-loader": "^7.1.2",
 		"css-minimizer-webpack-plugin": "^7.0.2",
 		"esbuild": "^0.25.9",
-		"eslint": "^9.35.0",
+		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-config-xo": "^0.49.0",
 		"eslint-config-xo-typescript": "^9.0.0",
