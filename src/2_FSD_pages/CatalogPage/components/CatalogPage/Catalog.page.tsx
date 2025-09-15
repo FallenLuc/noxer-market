@@ -1,5 +1,9 @@
 import { ProductCardItemList } from "@entities/Product"
-import { useGetProductsDataSelector } from "@features/LoadProducts/store/selectors/getProductsFields.selector"
+import {
+	useGetProductsDataSelector,
+	useGetProductsInitSelector,
+	useGetProductsIsLoadingSelector
+} from "@features/LoadProducts/store/selectors/getProductsFields.selector"
 import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { ContainerLayout } from "@ui/layout"
 import { Page } from "@ui/Page"
@@ -19,6 +23,8 @@ const CatalogPage = TypedMemo(() => {
 	)
 
 	const products = useGetProductsDataSelector()
+	const isLoading = useGetProductsIsLoadingSelector()
+	const _init = useGetProductsInitSelector()
 
 	return (
 		<Page footer={footer}>
@@ -34,6 +40,7 @@ const CatalogPage = TypedMemo(() => {
 					</Text>
 					<ProductCardItemList
 						mode={"full"}
+						isLoading={isLoading && !_init}
 						products={products}
 					/>
 				</VStack>

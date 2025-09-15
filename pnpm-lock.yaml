@@ -23,6 +23,9 @@ importers:
       '@use-gesture/react':
         specifier: ^10.3.1
         version: 10.3.1(react@19.1.1)
+      '@virtuoso.dev/message-list':
+        specifier: ^1.13.3
+        version: 1.13.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       antd:
         specifier: ^5.27.3
         version: 5.27.3(date-fns@2.30.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -71,12 +74,18 @@ importers:
       react-spinners:
         specifier: ^0.17.0
         version: 0.17.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react-virtuoso:
+        specifier: ^4.14.0
+        version: 4.14.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       slick-carousel:
         specifier: ^1.8.1
         version: 1.8.1(jquery@3.7.1)
       uid:
         specifier: ^2.0.2
         version: 2.0.2
+      virtua:
+        specifier: ^0.43.1
+        version: 0.43.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
     devDependencies:
       '@arthurgeron/eslint-plugin-react-usememo':
         specifier: ^2.5.0
@@ -2732,6 +2741,18 @@ packages:
     resolution: {integrity: sha512-Yy19y6O2GJq8f7CHf7L0nxL8bf4PZCPaVOCgJrusOeFHY1LvHgYXnmnXg6N5iwAnbgbZCDjo60SiM6IPJi9C5g==}
     peerDependencies:
       react: '>= 16.8.0'
+
+  '@virtuoso.dev/gurx@1.1.0':
+    resolution: {integrity: sha512-Z2mOKEgmMPnkf7hb3JaqJCVuvBD7qaK9KuI95BMBzOioHvPqhI79UcC6dHCprz9aZef/YaZ5ZwcYRRGVtfLU0g==}
+    peerDependencies:
+      react: '>= 16 || >= 17 || >= 18 || >= 19'
+      react-dom: '>= 16 || >= 17 || >= 18 || >= 19'
+
+  '@virtuoso.dev/message-list@1.13.3':
+    resolution: {integrity: sha512-kzKFpPJqrQCFuQ2piPEuy7p3qvzphIYZIKiJeHii8zUs73ggOhk6YBwr9BoPyWNX8DUKpSWdcLFx+cd/bAyRTA==}
+    peerDependencies:
+      react: '>= 16 || >= 17 || >= 18 || >= 19'
+      react-dom: '>= 16 || >= 17 || >= 18 || >= 19'
 
   '@vitest/expect@3.2.4':
     resolution: {integrity: sha512-Io0yyORnB6sikFlt8QW5K7slY4OjqNX9jmJQ02QDda8lyM6B5oNgVWoSoKPac8/kgnCUzuHQKrSLtu/uOqqrig==}
@@ -6328,6 +6349,12 @@ packages:
       '@types/react':
         optional: true
 
+  react-virtuoso@4.14.0:
+    resolution: {integrity: sha512-fR+eiCvirSNIRvvCD7ueJPRsacGQvUbjkwgWzBZXVq+yWypoH7mRUvWJzGHIdoRaCZCT+6mMMMwIG2S1BW3uwA==}
+    peerDependencies:
+      react: '>=16 || >=17 || >= 18 || >= 19'
+      react-dom: '>=16 || >=17 || >= 18 || >=19'
+
   react@19.1.1:
     resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
     engines: {node: '>=0.10.0'}
@@ -7366,6 +7393,26 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  virtua@0.43.1:
+    resolution: {integrity: sha512-379ETgqWgzugIJ/crFxNGbqUSMUv0cGxJdpXC7SYvsUpdFWzaqFJIz1XXnJVlTjmE5CYjT+2ipQvAn5N9efGag==}
+    peerDependencies:
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
+      solid-js: '>=1.0'
+      svelte: '>=5.0'
+      vue: '>=3.2'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      solid-js:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
 
   void-elements@3.1.0:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
@@ -10276,6 +10323,17 @@ snapshots:
     dependencies:
       '@use-gesture/core': 10.3.1
       react: 19.1.1
+
+  '@virtuoso.dev/gurx@1.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+
+  '@virtuoso.dev/message-list@1.13.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+    dependencies:
+      '@virtuoso.dev/gurx': 1.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
 
   '@vitest/expect@3.2.4':
     dependencies:
@@ -14411,6 +14469,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.13
 
+  react-virtuoso@4.14.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+
   react@19.1.1: {}
 
   readable-stream@2.3.8:
@@ -15593,6 +15656,11 @@ snapshots:
       convert-source-map: 2.0.0
 
   vary@1.1.2: {}
+
+  virtua@0.43.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    optionalDependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
 
   void-elements@3.1.0: {}
 
