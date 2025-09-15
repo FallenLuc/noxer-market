@@ -6,4 +6,3 @@ export type paginationType = {
 	total_pages: number
 	total_products: number
 }
-//todo перенести в новую фичу пагинации

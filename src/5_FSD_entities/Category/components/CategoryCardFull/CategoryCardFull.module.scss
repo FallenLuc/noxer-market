@@ -5,7 +5,7 @@
 
 	padding: 0 var(--space-xxs);
 
-	--fs-category-title: clamp(11px, 11cqw, 13px); // todo шрифты
+	--fs-category-title: clamp(var(--font-size-xxs), 14cqw, var(--font-size-s));
 }
 
 .image {

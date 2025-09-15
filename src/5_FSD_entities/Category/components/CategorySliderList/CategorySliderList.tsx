@@ -3,7 +3,7 @@ import classNames from "classnames"
 import { useMemo } from "react"
 import Slider, { type Settings } from "react-slick"
 import type { categoryDataType } from "../../types/categotyData.type"
-import { CategoryCardFull } from "../CategoryCardFull/CategoryCardFull"
+import { CategoryCard } from "../CategoryCard/CategoryCard"
 import styles from "./CategorySliderList.module.scss"
 
 type CategorySliderListProps = {
@@ -39,7 +39,8 @@ export const CategorySliderList = TypedMemo((props: CategorySliderListProps) => 
 				className={classNames(styles.slider)}
 			>
 				{categories.map(cat => (
-					<CategoryCardFull
+					<CategoryCard
+						mode={"full"}
 						category={cat}
 						key={cat.Category_ID}
 					/>

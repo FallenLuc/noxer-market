@@ -1,4 +1,4 @@
-export type fontSizeType = "xs" | "s" | "m" | "l" | "xl"
+export type fontSizeType = "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl"
 
 export type fontWeightType = "medium" | "medium-fat" | "fat" | "ultra-fat"
 

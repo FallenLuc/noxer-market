@@ -43,7 +43,9 @@ export const { selectAll: getProductsDataSelector } = productsAdapter.getSelecto
 	state => state.products || initialStateAdapter
 )
 
-export const [useGetProductsFilteredDataSelector, getProductsFilteredDataSelector] =
-	buildCreateSelector([getProductsSelector], (state: productsStateMap) => state.filteredProducts)
+export const [useGetProductsFilteredDataSelector] = buildCreateSelector(
+	[getProductsSelector],
+	(state: productsStateMap) => state.filteredProducts
+)
 
 export const [useGetProductsDataSelector] = buildSelector(getProductsDataSelector)
