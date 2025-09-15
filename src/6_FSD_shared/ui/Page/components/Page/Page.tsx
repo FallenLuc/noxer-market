@@ -18,6 +18,7 @@ export const Page = TypedMemo((props: PageProps) => {
 			<VStack
 				className={classNames(styles.Page, className)}
 				justify={"spaceBetween"}
+				gap={"S"}
 			>
 				{children}
 				{footer}

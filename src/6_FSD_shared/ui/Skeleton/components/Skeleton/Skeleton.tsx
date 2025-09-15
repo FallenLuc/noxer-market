@@ -11,7 +11,7 @@ export const Skeleton = TypedMemo((props: SkeletonProps) => {
 
 	return (
 		<SkeletonComponent.Image
-			active
+			active={false}
 			rootClassName={style.Skeleton}
 			className={className}
 		/>

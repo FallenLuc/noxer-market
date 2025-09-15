@@ -153,6 +153,7 @@
 		"react-spinners": "^0.17.0",
 		"react-virtuoso": "^4.14.0",
 		"slick-carousel": "^1.8.1",
-		"uid": "^2.0.2"
+		"uid": "^2.0.2",
+		"virtua": "^0.43.1"
 	}
 }

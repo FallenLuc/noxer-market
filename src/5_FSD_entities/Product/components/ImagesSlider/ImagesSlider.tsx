@@ -2,7 +2,8 @@ import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { AppImage } from "@ui/AppImage"
 import { Skeleton } from "@ui/Skeleton"
 import { useMemo } from "react"
-import Slider, { type Settings } from "react-slick"
+import type { Settings } from "react-slick"
+import Slider from "react-slick"
 import type { productDataType } from "../../types/productData.type"
 import styles from "./ImagesSlider.module.scss"
 
@@ -27,13 +28,13 @@ export const ImagesSlider = TypedMemo((props: ImagesSliderProps) => {
 	const settings: Settings = useMemo(
 		() => ({
 			dots: true,
-			infinite: true,
+			infinite: false,
 			speed: 500,
 			slidesToShow: 1,
 			arrows: false,
 			draggable: true,
-			lazyLoad: "ondemand",
 			swipeToSlide: true,
+			isLazy: "ondemand",
 			slidesToScroll: 1
 		}),
 		[]
@@ -52,13 +53,15 @@ export const ImagesSlider = TypedMemo((props: ImagesSliderProps) => {
 						key={image.Image_ID}
 						className={styles.imageWrapper}
 					>
-						<AppImage
-							className={styles.image}
-							fallback={fallback}
-							errorFallback={fallback}
-							src={image?.Image_URL ?? ""}
-							alt={product.Product_Name}
-						/>
+						{image.Image_URL ?
+							<AppImage
+								className={styles.image}
+								fallback={fallback}
+								errorFallback={fallback}
+								src={image?.Image_URL ?? ""}
+								alt={product.Product_Name}
+							/>
+						:	fallback}
 					</div>
 				))
 			:	<div className={styles.imageWrapper}>{fallback}</div>}

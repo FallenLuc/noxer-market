@@ -1,10 +1,11 @@
+import { BP_S } from "@constants/common.constant"
+import { useWindowSize } from "@hooks/useWindowSize.hook"
 import { TypedMemo } from "@sharedProviders/TypedMemo"
 import { Loader } from "@ui/Loader"
 import { HStack } from "@ui/Stack"
 import { Text } from "@ui/Text"
 import classNames from "classnames"
-import { useCallback, useMemo } from "react"
-import { VirtuosoGrid } from "react-virtuoso"
+import { WindowVirtualizer } from "virtua"
 import type { productDataType } from "../../types/productData.type"
 import { ProductCard } from "../ProductCard/ProductCard"
 import styles from "./ProductCardItemList.module.scss"
@@ -22,13 +23,13 @@ export const ProductCardItemList = TypedMemo((props: ProductCardItemListProps) =
 
 	if (!isShow) return null
 
+	const size = useWindowSize()
+
 	if (isLoading) {
 		return (
 			<div
 				className={classNames(
-					mode == "compact" ?
-						styles.ProductCardItemListCompact
-					:	styles.ProductCardItemList,
+					mode == "compact" ? styles.ProductCardItemListCompact : styles.gridList,
 					{ [styles.minHeight]: (isLoading || !products?.length) && mode === "compact" },
 					className
 				)}
@@ -42,9 +43,7 @@ export const ProductCardItemList = TypedMemo((props: ProductCardItemListProps) =
 		return (
 			<div
 				className={classNames(
-					mode == "compact" ?
-						styles.ProductCardItemListCompact
-					:	styles.ProductCardItemList,
+					mode == "compact" ? styles.ProductCardItemListCompact : styles.gridList,
 					{ [styles.minHeight]: (isLoading || !products?.length) && mode === "compact" },
 					className
 				)}
@@ -66,29 +65,54 @@ export const ProductCardItemList = TypedMemo((props: ProductCardItemListProps) =
 			</div>
 		)
 
-	const itemContent = useCallback(
-		(_: any, item: productDataType) => (
-			<ProductCard
-				product={item}
-				mode="compact"
-			/>
-		),
-		[]
-	)
-	const computeItemKey = useCallback((_: any, item: productDataType) => item.Product_ID, [])
+	if (mode === "compact") {
+		return (
+			<div
+				className={classNames(
+					mode == "compact" ? styles.ProductCardItemListCompact : styles.gridList,
+					{ [styles.minHeight]: (isLoading || !products?.length) && mode === "compact" },
+					className
+				)}
+			>
+				{products.map(product => (
+					<ProductCard
+						key={product.Product_ID}
+						product={product}
+						mode={mode}
+					/>
+				))}
+			</div>
+		)
+	}
 
-	const increaseViewportBy = useMemo(() => ({ top: 200, bottom: 300 }), [])
+	let stack: productDataType[] = []
+
+	const countGrid = size.width > BP_S ? 3 : 2
 
 	return (
-		<VirtuosoGrid
-			data={products}
-			itemContent={itemContent}
-			computeItemKey={computeItemKey}
-			listClassName={
-				mode == "compact" ? styles.ProductCardItemListCompact : styles.ProductCardItemList
-			}
-			increaseViewportBy={increaseViewportBy}
-			overscan={2}
-		/>
+		<WindowVirtualizer>
+			{products.map((product, i) => {
+				stack.push(product)
+
+				if ((i + 1) % countGrid === 0 || products.length - i < countGrid) {
+					const mirrorStack = stack
+					stack = []
+					return (
+						<div
+							key={product.Product_ID}
+							className={styles.gridList}
+						>
+							{mirrorStack.map(pr => (
+								<ProductCard
+									key={pr.Product_ID}
+									product={pr}
+									mode={"full"}
+								/>
+							))}
+						</div>
+					)
+				}
+			})}
+		</WindowVirtualizer>
 	)
 })

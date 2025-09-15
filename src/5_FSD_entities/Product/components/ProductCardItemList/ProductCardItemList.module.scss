@@ -1,24 +1,25 @@
 @use "@styles/vars/global.var" as *;
 
-.ProductCardItemList {
+.grid-list {
 	display: grid;
-
 	grid-template-columns: repeat(3, 1fr);
-
 	justify-content: center;
 	width: 100%;
+
 	gap: var(--space-xs);
+
+	padding-bottom: var(--space-xs);
 }
 
 @media (width <= $bp-s) {
-	.ProductCardItemList {
-		grid-template-columns: repeat(2, 1fr);
+	.grid-list {
+		grid-template-columns: repeat(2, 1fr) !important;
 	}
 }
 
 @media (max-width <= $bp-xs) {
-	.ProductCardItemList {
-		grid-template-columns: repeat(2, 1fr);
+	.grid-list {
+		grid-template-columns: repeat(2, 1fr) !important;
 	}
 }
 
